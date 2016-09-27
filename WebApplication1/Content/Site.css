@@ -1,0 +1,44 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.headerTr {
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+.headerLabels {
+    padding-top: 10px;
+    text-align: center;
+    color: black;
+}
+
+.folderText {
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.fileText {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: underline;
+    color: #3399ff;
+    font-size: 12px;
+    padding-left: 0px;
+}

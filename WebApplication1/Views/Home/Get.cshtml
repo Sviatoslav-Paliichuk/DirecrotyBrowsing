@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication1.Models.Content>
+@{
+    ViewBag.Title = "Get";
+}
+<div ng-controller="HomeController" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <table border="1" align="center" width="60%">
+        <thead style="background-color:#bfbfbf;">
+            <tr>
+                <th><p class="headerTr">Less 10mb</p></th>
+                <th><p class="headerTr">Less 10mb-50mb</p></th>
+                <th><p class="headerTr">More 100Mb</p></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><p class="headerLabels">@Model.Max(x => x.SmallSize)</p></td>
+                <td><p class="headerLabels">@Model.Max(x => x.MediumSize)</p></td>
+                <td><p class="headerLabels">@Model.Max(x => x.BigSize) </p></td>
+            </tr>
+        </tbody>
+    </table>    
+    <table border="1" width="60%" height="20px" align="center">
+        <tr>
+            <td>
+                <p style="text-align:left; padding-left:10px;padding-top:10px"><b>Current path:  </b>@ViewBag.All</p>
+            </td>
+        </tr>
+    </table>
+    <table width="60%" align="center" style="border: 1px solid black; background-color:#f3f3f3;">       
+        <tr>           
+            <td><a id="link-5" ng-href="Back" >...</a></td>            
+        </tr>
+        <tr ng-repeat="content in contents">            
+            <td>
+                <a id="link-6" ng-href="{{content.Directory}}" class="folderText">{{content.Directory}}</a>
+                <a id="link-4" ng-href="{{content.File}}" class="fileText">{{content.File}}</a>
+            </td> 
+        </tr>                   
+</table>
+</div>
